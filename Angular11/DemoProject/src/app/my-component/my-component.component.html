@@ -1,0 +1,59 @@
+<p appHighlight value="red">Customer Form</p>
+
+<form ngForm>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" [(ngModel)]="model.age" name="age">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)=" createCustomer()">Submit</button>
+</form>
+
+<div>
+    <tr>
+        <td>
+    <ol>
+        <span>
+        <li appHighlight value="yellow" *ngFor='let cust of custArray'>
+            {{cust.name | lowercase}} <b>||</b> {{cust.age | testPipe:2}}
+        
+        <span>
+            <button type="reset" class="btn btn-primary" (click)="updateCustomer()">Update</button>
+            <button style="color: aliceblue; background-color:crimson ;" type="button" class="btn btn-delete"
+                (click)="deleteCustomer()">Delete</button>
+        </span>
+        </li>
+    </span>
+    </ol>
+</td>
+</tr>
+
+</div>
+
+
+<div>
+
+        <ol>
+    
+            <span>
+    
+            <li appHighlight value="pink" *ngFor='let course of getData'>
+    
+                {{course.courseId}} <b>||</b> {{course.courseName}}<b>||</b> {{course.courseFees}}
+    
+    
+    
+            </li>
+    
+        </span>
+    
+        </ol>
+    
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click)=" getCourseDetails()">Submit</button>

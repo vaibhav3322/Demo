@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+      class Person{
+
+
+        // private variable here
+        #test;
+            
+        // in js we can have only one constructor either paramatrized or default
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+                this.#test=100;
+                console.log('Person is inint-->');
+                console.log('Name of the person-->' +this.name);
+                console.log('Age of the person-->' +this.age);
+            }
+        
+
+           #stuffPrivateValue(){
+
+             console.log('call the private one');
+            return 'this is the private one here -->' + "" +this.#test;
+           }
+ 
+
+
+        // public method impl 
+
+       getConcatValue(){
+
+
+        return this.conCat();
+   
+       }
+  
+       conCat(){
+
+        console.log('public method are called -->');
+        return this.name + "with" + this.age;
+       }
+
+
+        // privledge one 
+
+       perMethod(){
+ 
+          console.log('call the private one using previledge');
+
+        return this.#stuffPrivateValue();
+       }
+
+       // static one here 
+
+       static testStatic(){
+
+        console.log('call static here -->');
+        return 'here is static impl';
+       }
+
+
+      }// class defination over here
+
+
+      Person.prototype.test1=200;
+      Person.prototype.sayHello=function(){
+
+             console.log('add extension in class-->');
+        return this.test1;
+      }
+
+
+  // craerte one class for inheritance using extends keyword 
+
+       class Student extends Person {
+
+
+          testChildMethod(){
+
+             console.log('call the child one')
+            return 'here is the child impl-->'; 
+          }
+       }
+
+
+
+
+      //let p=new Person('Training A11', 5);
+
+      let s=new Student('Training A11', 5);
+      console.log('call the public method here -->' +s.getConcatValue());
+      //console.log('call the private one here -->' +p.#stuffPrivateValue());
+      console.log('call previledge to access private-->' +s.perMethod());
+      console.log('call the method prototype here -->' +s.sayHello());    
+      console.log('call static here -->' +Person.testStatic());
+      console.log('call the child one-->' +s.testChildMethod());
+
+
+    </script>
+
+</head>
+<body>
+ 
+    
+</body>
+</html>
+ 

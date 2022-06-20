@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+    
+         class BasicCal
+         {
+             addition
+                 //Constructor is Parametrised
+                BasicCal()
+                {
+                     // this.value1=value1;
+                      //this.value2=value2;
+                      this.addition=0;
+                      console.log('Calculator Constructor init-->');
+                }
+
+                 addMethod(value1 , value2)
+                 {
+                    addition=value1+value2;
+                 }
+
+                 subMethod()
+                 {
+                     substraction=value1-value2;
+                 }
+
+                 static mulMethod()
+                 {
+                     multiplication=value1*value2;
+                 }
+                
+         }//class ends here
+
+         BasicCal.prototype.divMethod=function()
+         {
+             division=value1/value2;
+         }
+    
+               let b=new BasicCal();
+
+               console.log('Addition of two numbers = '+b.addMethod());
+               //console.log('Substraction of two numbers ='+b.subMethod());
+               //console.log('Multiplication of two numbers ='+BasicCal.mulMethod());
+               //console.log('Division of two numbers ='+b.divMethod());
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
